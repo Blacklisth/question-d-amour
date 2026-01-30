@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: À Quel Point Nous Connaissons-Nous ?</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Fond animé avec cœurs -->
+    <div class="animated-background">
+        <div class="heart-shape"></div>
+        <div class="heart-shape"></div>
+        <div class="heart-shape"></div>
+    </div>
+
+    <!-- Écran d'accueil -->
+    <div class="start-screen" id="startScreen">
+        <div class="start-content">
+            <div class="start-icon">💖</div>
+            <h1 class="start-title">Quiz de l'Amour</h1>
+            <p class="start-subtitle">À quel point nous connaissons-nous ?</p>
+            
+            <div class="quiz-info">
+                <div class="info-item">
+                    <span class="info-icon">📝</span>
+                    <span class="info-text"><span id="questionCount">10</span> questions</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">⏱️</span>
+                    <span class="info-text">~5 minutes</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-icon">🎯</span>
+                    <span class="info-text">Score d'amour</span>
+                </div>
+            </div>
+            
+            <button class="start-btn" id="startBtn">
+                Commencer le Quiz 💕
+            </button>
+        </div>
+    </div>
+
+    <!-- Écran du quiz -->
+    <div class="quiz-screen" id="quizScreen">
+        <div class="quiz-container">
+            <!-- En-tête avec progression -->
+            <div class="quiz-header">
+                <div class="progress-info">
+                    Question <span id="currentQuestion">1</span> sur <span id="totalQuestions">10</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar-fill" id="progressBarFill"></div>
+                </div>
+            </div>
+
+            <!-- Zone de question -->
+            <div class="question-area">
+                <div class="question-icon" id="questionIcon">❓</div>
+                <h2 class="question-text" id="questionText">
+                    Chargement de la question...
+                </h2>
+            </div>
+
+            <!-- Zone de réponses -->
+            <div class="answers-area" id="answersArea">
+                <!-- Les réponses seront générées dynamiquement -->
+            </div>
+
+            <!-- Message de feedback -->
+            <div class="feedback-message" id="feedbackMessage"></div>
+        </div>
+    </div>
+
+    <!-- Écran des résultats -->
+    <div class="results-screen" id="resultsScreen">
+        <div class="results-content">
+            <div class="confetti-container" id="confettiContainer"></div>
+            
+            <div class="results-icon" id="resultsIcon">🎉</div>
+            
+            <h1 class="results-title">Résultats du Quiz !</h1>
+            
+            <div class="score-display">
+                <div class="score-circle">
+                    <svg class="score-svg" viewBox="0 0 200 200">
+                        <circle class="score-bg" cx="100" cy="100" r="90"></circle>
+                        <circle class="score-fill" id="scoreFillCircle" cx="100" cy="100" r="90"></circle>
+                    </svg>
+                    <div class="score-text">
+                        <span class="score-number" id="scoreNumber">0</span>
+                        <span class="score-total">/ <span id="scoreTotalDisplay">10</span></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="score-percentage">
+                <span id="scorePercentage">0</span>%
+            </div>
+
+            <div class="results-message-card">
+                <h3 class="results-message-title" id="resultsMessageTitle">Titre du résultat</h3>
+                <p class="results-message-text" id="resultsMessageText">Message personnalisé...</p>
+            </div>
+
+            <div class="love-meter">
+                <div class="love-meter-label">Niveau d'amour</div>
+                <div class="love-meter-bar">
+                    <div class="love-meter-fill" id="loveMeterFill">
+                        <span class="love-meter-hearts">❤️❤️❤️❤️❤️</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <button class="action-btn primary-btn" id="retryBtn">
+                    Recommencer 🔄
+                </button>
+                <button class="action-btn secondary-btn" id="shareBtn">
+                    Partager 💌
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
